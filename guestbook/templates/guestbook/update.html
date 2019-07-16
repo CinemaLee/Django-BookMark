@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <form action="{% url 'update' id=form.instance.idx %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="form_id" value="{{ form.instance.idx }}" />
+        <!--수정된 놈의 id값을 views.update로 넘겨줌. form.instance는 views.update에서 get방식 로직으로 html에 넘겨준것.-->
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">수정완료</button>
+    </form>
+</body>
+</html>

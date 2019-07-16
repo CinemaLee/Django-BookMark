@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+    <h2>온라인 설문조사</h2>
+    <form action="{% url 'save' %}" method="POST">
+        {% csrf_token %}
+        {{ survey.question}}<br>
+        <input type="radio" name='num' value='1'>{{survey.ans1}}<br>
+        <input type="radio" name='num' value='2'>{{survey.ans2}}<br>
+        <input type="radio" name='num' value='3'>{{survey.ans3}}<br>
+        <input type="radio" name='num' value='4'>{{survey.ans4}}<br>
+        <br>
+        <input type="hidden" name='survey_idx' value="{{survey.survey_idx}}">
+        <input type="submit" value="투표">
+        <input type="button" value="결과 확인" onclick="show_result()">
+    </form>
+</body>
+</html>

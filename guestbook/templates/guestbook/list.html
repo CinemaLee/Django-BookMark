@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <h1>GuestBook List</h1>
+    {{ itemcount }}개의 방명록이 있습니다. <input type="button" value='글쓰기' onclick="location.href='write'">
+    {% for i in itemlist %}
+        <h3>{{ i.name }}</h3>
+        <h3>{{ i.email }}</h3>
+        <h3>{{ i.content }}</h3>
+        <a href="{% url 'update' id=i.idx %}" class="card-link">수정하기</a>
+        <a href="{% url 'delete' id=i.idx %}" class="card-link">삭제하기</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>
