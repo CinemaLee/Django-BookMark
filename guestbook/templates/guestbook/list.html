@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1>GuestBook List</h1>
+    <h3><a href="{% url 'home' %}" class="card-link">Home</a></h3> 
+    <br>
     {{ itemcount }}개의 방명록이 있습니다. <input type="button" value='글쓰기' onclick="location.href='write'">
     {% for i in itemlist %}
         <h3>{{ i.name }}</h3>

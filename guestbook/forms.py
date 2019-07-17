@@ -1,8 +1,22 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Guestbook
+from .models import Guestbook, Fcuser
 from django.utils.translation import gettext_lazy as _
 
+# 폼을 사용하는 이유??? 기본적으로 유효성 검사를 쉽게 해주고, 악의적인 데이터를 필터링 해준다.(sanitisation)
+
+class LoginForm(ModelForm):
+    class Meta:
+        model = Fcuser
+        fields = ['username', 'password']
+
+        help_texts = {
+            'username':_('아이디를 입력해주세요'),
+            'password':_('비밀번호를 입력해주세요'),
+        }
+        widgets={
+            'password':forms.PasswordInput()
+        }
 
 
 class GuestbookForm(ModelForm):

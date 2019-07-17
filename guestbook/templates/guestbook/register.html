@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <h3>{{ error }}</h3>
+    <form action="" method="POST">{% csrf_token %}
+        <label for="username">사용자 이름</label>
+        <input type="text" id="username" placeholder="사용자 이름" name="username">
+        <br>
+        <label for="useremail">사용자 이메일</label>
+        <input type="email" id="useremail" placeholder="사용자 이메일" name="useremail">
+        <br>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" placeholder="비밀번호" name="password">
+        <br>
+        <label for="re-password">비밀번호 확인</label>
+        <input type="password" id="re-password" placeholder="비밀번호 확인" name="re-password">
+        <br>
+        <button type="submit">등록</button>
+    </form>
+</body>
+</html>
