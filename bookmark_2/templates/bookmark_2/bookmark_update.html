@@ -1,0 +1,12 @@
+{% extends 'bookmark_2/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-12">
+        <!--UpdateView에서 form자체를 넘겨준다.-->
+        <form action="" method="post">{% csrf_token %} 
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="수정완료">
+        </form>
+    </div>
+</div>
+{% endblock %}

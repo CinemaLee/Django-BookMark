@@ -1,0 +1,19 @@
+{% extends 'bookmark_2/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ object.site_name }}</h5> 
+                    <h6 class="card-subtitle mb-2 text-muted"><a href="{{ object.url }}">{{ object.url }}</a></h6>
+                    <p class="card-text">{{ object.content }}</p>
+                    <a href="{% url 'bookmark_2:update' object.id %}" class="card-link">수정</a>
+                    <a href="{% url 'bookmark_2:delete' object.id %}" class="card-link">삭제</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

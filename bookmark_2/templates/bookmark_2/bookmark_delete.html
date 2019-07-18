@@ -1,0 +1,17 @@
+{% extends 'bookmark_2/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-primary" role="alert">
+                정말 {{object.site_name}}을 삭제하실 건가요?
+            </div>
+            <form action="" method="post">{% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="삭제">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

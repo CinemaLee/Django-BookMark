@@ -1,0 +1,15 @@
+{% extends 'bookmark_2/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-12">
+        <div class="alert alert-primary" role="alert">
+            모든 부분을 다 채워주세요!
+        </div>
+        <!--CreateView에서 form자체를 넘겨준다. db에 저장 등등 따로 로직을 구현할 필요가 없음. 알아서 다 구현되어잇음. 폼만 던져줄뿐-->
+        <form action="" method="post">{% csrf_token %} 
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary" value="Create">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -21,6 +21,9 @@ urlpatterns = [
     path('bookmark/', include('bookmark.urls')),
     path('survey/',include('survey.urls')),
     path('guestbook/',include('guestbook.urls')),
+
+
+    path('bookmark_2/', include('bookmark_2.urls'))
 ]
 
 
